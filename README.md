@@ -9,3 +9,4 @@ Replace the placeholder huggingface access token in `scripts/constants.py` with 
 ## Code
 
 - `constants.py`: secrets, API keys and such
+- `pronouns.py`: parametrized list of pronouns we use in the paper (simply extend this dictionary to evaluate on more pronouns)
