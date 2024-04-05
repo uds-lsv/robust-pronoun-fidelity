@@ -11,6 +11,7 @@ Replace the placeholder huggingface access token in `scripts/constants.py` with 
 - `constants.py`: secrets, API keys and such
 - `pronouns.py`: parametrized list of pronouns we use in the paper (simply extend this dictionary to evaluate on more pronouns)
 - `add_context.py`: given task templates and context templates, create pronoun use fidelity data with an explicit introduction and various numbers of distractors
+- `sample_templates.py`: sample templates for the evaluation in our paper
 
 ## Data
 
@@ -22,4 +23,18 @@ After unzipping, run
 ```
 python3 scripts/add_context.py data/task.tsv data/context.tsv
 ```
-to generate the 5 million+ instances of our complete dataset.
+to generate the 5 million+ instances of our complete dataset. This will generate the following files:
+* `eo_task.tsv` (7200 lines): explicit occupation introduction + task
+* `eo_ep_task.tsv` (86400 lines): explicit occupation introduction + explicit participant distractor + task
+* `eo_ep_ip_task.tsv` (345600 lines): explicit occupation introduction + explicit participant distractor + 1 implicit participant distractor + task
+* `eo_ep_ip_ip_task.tsv` (1036800 lines): as above, but with 2 implicit distractors
+* `eo_ep_ip_ip_ip_task.tsv` (2073600 lines): as above, but with 3 implicit distractors
+* `eo_ep_ip_ip_ip_ip_task.tsv` (2073600 lines): as above, but with 4 implicit distractors
+
+To sample the 3 x 2,160 instances we use per setting to replicate our model evaluation, run
+```
+python3 scripts/sample_templates.py
+```
+which will generate 18 more files named like the ones above, prefixed with the random seeds 13, 17 and 19, each with 2,160 lines.
+
+These files can be used to reproduce our reported numbers.
