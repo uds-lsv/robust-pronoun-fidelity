@@ -10,9 +10,16 @@ Replace the placeholder huggingface access token in `scripts/constants.py` with 
 
 - `constants.py`: secrets, API keys and such
 - `pronouns.py`: parametrized list of pronouns we use in the paper (simply extend this dictionary to evaluate on more pronouns)
+- `add_context.py`: given task templates and context templates, create pronoun use fidelity data with an explicit introduction and various numbers of distractors
 
 ## Data
 
 We provide our newly constructed templates in a zipped data file. Please unzip it with the password `vogelbeobachtung131719`, using a command like `unzip -P PASSWORD FILE.zip`. It contains two files:
 * `task.tsv`: task templates where each row contains a sentence for a given occupation, participant and pronoun type; the word column is equal to occupation because it is the answer for the coreference
 * `context.tsv`: context templates where each row contains paired explicit and implicit templates for a given pronoun type and polarity
+
+After unzipping, run
+```
+python3 scripts/add_context.py data/task.tsv data/context.tsv
+```
+to generate the 5 million+ instances of our complete dataset.
