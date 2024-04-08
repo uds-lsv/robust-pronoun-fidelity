@@ -14,6 +14,7 @@ Replace the placeholder huggingface access token in `scripts/constants.py` with 
 - `sample_templates.py`: sample templates for the evaluation in our paper; run with `python3 sample_templates.py`
 - `score_models.py`: scoring all the models in the paper; run with, e.g., `python3 score_models.py 13_eo_task.tsv` or `python3 score_models.py 19*.tsv`, which will create directories for each TSV file and populate them with a results file for each model
 - `prompt.py`: prompting code for all the chat models in the paper, used by `score_models.py`; not a runnable script on its own
+- `sample_for_humans.py`: sample templates for human evaluation of pronoun use fidelity; run with `python3 sample_for_humans.py`, which will create the file `sampled_for_humans.tsv`
 
 ## Data
 
