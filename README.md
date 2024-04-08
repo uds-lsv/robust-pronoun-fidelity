@@ -12,6 +12,8 @@ Replace the placeholder huggingface access token in `scripts/constants.py` with 
 - `pronouns.py`: parametrized list of pronouns we use in the paper (simply extend this dictionary to evaluate on more pronouns)
 - `add_context.py`: given task templates and context templates, create pronoun use fidelity data with an explicit introduction and various numbers of distractors
 - `sample_templates.py`: sample templates for the evaluation in our paper
+- `score_models.py`: scoring all the models in the paper; run with, e.g., `python3 score_models.py 13_eo_task.tsv` or `python3 score_models.py 19*.tsv`
+- `prompt.py`: prompting code for all the chat models in the paper, used by `score_models.py`; not a runnable script on its own
 
 ## Data
 
