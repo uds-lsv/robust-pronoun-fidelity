@@ -1,4 +1,4 @@
-# Robust Pronoun Use Fidelity with English LLMs: Are they Reasoning, Repeating, or Just Biased?
+# Robust Pronoun Fidelity with English LLMs: Are they Reasoning, Repeating, or Just Biased?
 
 This repository contains code, data and human annotations for our paper.
 
